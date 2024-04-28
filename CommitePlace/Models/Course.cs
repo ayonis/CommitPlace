@@ -1,13 +1,15 @@
-﻿namespace CommitePlace.Models
+using System.ComponentModel.DataAnnotations;
+
+namespace Commiteeplace.Models
 {
     public class Course
     {
-        public string CourseId { get; set; }
+        [Key]
+        public string Id { get; set; }
         public string CourseName { get; set; }
-        public string ExamTime { get; set; }
+        public DateTime ExamTime { get; set; }
         public string Room { get; set; }
         public string Place { get; set; }
-        public ICollection<StudentCourse> StudentCourses { get; set; }
-
+        public List<StudentCourse> StudentCourses { get; set; }
     }
 }
